@@ -1,0 +1,24 @@
+{
+  "name": "Adafruit Motor Shield V2 ESP32 Library",
+  "keywords": "motor,driver,shield,encoder,PWM,L298D",
+  "description": "Library for the Adafruit Motor Shield V2 for Arduino ESP32. It supports DC motors & stepper motors with microstepping as well as stacking-support.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nstoeckigt/Adafruit_Motor_Shield_V2-ESP32_Library"
+  },
+  "version": "1.0.11-1",
+  "exclude": "",
+  "authors": {
+    "name": "Adafruit",
+    "email": ""
+  },
+  "mainteiners": {
+    "name": "Nico Stöckigt",
+    "email": "arduino@nstoeckigt.de"
+  },
+  "license": "GPL-3.0-or-later",
+  "frameworks": "arduino",
+  "platforms": [
+    "esp32"
+  ]
+}
