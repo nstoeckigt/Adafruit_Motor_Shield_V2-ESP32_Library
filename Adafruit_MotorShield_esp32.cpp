@@ -1,5 +1,5 @@
 /*!
- * @file Adafruit_MotorShield.cpp
+ * @file Adafruit_MotorShield_esp32.cpp
  *
  * @mainpage Adafruit FXOS8700 accel/mag sensor driver
  *
@@ -28,7 +28,7 @@
  *
  */
 
-#include "Adafruit_MotorShield.h"
+#include "Adafruit_MotorShield_esp32.h"
 #include "Arduino.h"
 #include <Adafruit_MS_PWMServoDriver.h>
 #include <Wire.h>
@@ -135,21 +135,21 @@ Adafruit_DCMotor *Adafruit_MotorShield::getMotor(uint8_t num) {
     dcmotors[num].MC = this;
     uint8_t pwm, in1, in2;
     if (num == 0) {
-      pwm = 8;
-      in2 = 9;
-      in1 = 10;
+      pwm = 12; //IO12
+      in2 = 13; //IO13
+      in1 = 5;  //IO5
     } else if (num == 1) {
-      pwm = 13;
-      in2 = 12;
-      in1 = 11;
+      pwm = 18; //IO18
+      in2 = 19; //IO19
+      in1 = 23; //IO23
     } else if (num == 2) {
-      pwm = 2;
-      in2 = 3;
-      in1 = 4;
+      pwm = 26; //IO26
+      in2 = 25; //IO25
+      in1 = 17; //IO17
     } else if (num == 3) {
-      pwm = 7;
-      in2 = 6;
-      in1 = 5;
+      pwm = 14; //IO14
+      in2 = 27; //IO27
+      in1 = 16; //IO16
     }
     dcmotors[num].PWMpin = pwm;
     dcmotors[num].IN1pin = in1;
@@ -183,19 +183,19 @@ Adafruit_StepperMotor *Adafruit_MotorShield::getStepper(uint16_t steps,
     steppers[num].MC = this;
     uint8_t pwma, pwmb, ain1, ain2, bin1, bin2;
     if (num == 0) {
-      pwma = 8;
-      ain2 = 9;
-      ain1 = 10;
-      pwmb = 13;
-      bin2 = 12;
-      bin1 = 11;
+      pwma = 12; //IO12
+      ain2 = 13; //IO13
+      ain1 = 5;  //IO5
+      pwmb = 18; //IO18
+      bin2 = 19; //IO19
+      bin1 = 23; //IO23
     } else if (num == 1) {
-      pwma = 2;
-      ain2 = 3;
-      ain1 = 4;
-      pwmb = 7;
-      bin2 = 6;
-      bin1 = 5;
+      pwma = 26; //IO26
+      ain2 = 25; //IO25
+      ain1 = 17; //IO17
+      pwmb = 14; //IO14
+      bin2 = 27; //IO27
+      bin1 = 16; //IO16
     }
     steppers[num].PWMApin = pwma;
     steppers[num].PWMBpin = pwmb;
